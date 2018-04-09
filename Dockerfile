@@ -41,6 +41,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # 	  Eclipse repository address
 #
 # =========================================================================
+
 #ENV ECLIPSE_HOST=http://pkgnginx 
 ENV ECLIPSE_HOST=http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/2
 

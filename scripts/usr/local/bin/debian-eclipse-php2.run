@@ -2,8 +2,8 @@
 # =========================================================================
 # =========================================================================
 #
-#	eclipse-php2.run
-#	  Sample run script for eclipse-php2.run
+#	debian-eclipse-php2.run
+#	  Sample run script for debian-eclipse-php2.run
 #
 # =========================================================================
 #
@@ -12,7 +12,7 @@
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
 # @package ewsdocker/debian-eclipse-php
-# @subpackage eclipse-php2.run
+# @subpackage debian-eclipse-php2.run
 #
 # =========================================================================
 #
@@ -34,5 +34,5 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v ${HOME}/.config/eclipse:/root \
            -v /media/dev-2018/docker:/workspace \
            -v /media/sf_Software:/source \
-           --name=eclipse-php \
-        eclipse-php:latest
+           --name=debian-eclipse-php \
+        ewsdocker/debian-eclipse-php:latest

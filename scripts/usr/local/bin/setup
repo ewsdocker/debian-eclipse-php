@@ -1,0 +1,32 @@
+#!/bin/bash
+#=========================================================================
+# =========================================================================
+#
+#	setup
+#	  Copy run scripts to /userbin.
+#
+# =========================================================================
+#
+# @author Jay Wheeler.
+# @version 0.0.1
+# @copyright © 2018. EarthWalk Software.
+# @license Licensed under the Academic Free License version 3.0
+# @package ewsdocker/debian-eclipse-php
+# @subpackage setup
+#
+# =========================================================================
+#
+#	Copyright © 2018. EarthWalk Software
+#	Licensed under the Academic Free License, version 3.0.
+#
+#	Refer to the file named License.txt provided with the source,
+#	or from
+#
+#		http://opensource.org/licenses/academic.php
+#
+# =========================================================================
+# =========================================================================
+
+echo -n "Copying files to /userbin... "
+cp /usr/local/bin/*.run /userbin
+echo "done."

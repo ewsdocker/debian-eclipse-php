@@ -11,7 +11,7 @@ _____________________
 
 Other Docker versions (or tags) can be selected on the Docker [Tags](https://hub.docker.com/r/ewsdocker/debian-eclipse-php/tags/) page.  
 
-Explanation of the [Docker Tags](https://github.com/ewsdocker/debian-eclipse-php/wiki/DockerTags) is available on the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki).
+An explanation of the [Docker Tags](https://github.com/ewsdocker/debian-eclipse-php/wiki/DockerTags) is available on the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki).
 ____
 
 ### Overview  

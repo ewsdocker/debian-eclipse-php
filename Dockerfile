@@ -29,7 +29,6 @@
 FROM earthwalksoftware/debian-base-gui:2.1.1
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
-
 ENV DEBIAN_FRONTEND noninteractive
 
 # =========================================================================
@@ -42,10 +41,12 @@ ENV DEBIAN_FRONTEND noninteractive
 #
 # =========================================================================
 
-#ENV ECLIPSE_HOST=http://pkgnginx 
-ENV ECLIPSE_HOST=http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/2
+ENV ECLIPSE-OXYV=3
 
-ENV ECLIPSE_PKG=eclipse-php-oxygen-2-linux-gtk-x86_64.tar.gz 
+#ENV ECLIPSE_HOST=http://pkgnginx 
+ENV ECLIPSE_HOST=http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/${ECLIPSE-OXYV}
+
+ENV ECLIPSE_PKG=eclipse-php-oxygen-${ECLIPSE-OXYV}-linux-gtk-x86_64.tar.gz 
 ENV ECLIPSE_DIR=eclipse 
 ENV ECLIPSE_URL=${ECLIPSE_HOST}/${ECLIPSE_PKG}
 

@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 1.0.1
+# @version 1.0.0
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
 # @package ewsdocker/debian-eclipse-php
@@ -26,7 +26,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM earthwalksoftware/debian-base-gui:2.1.1
+FROM earthwalksoftware/debian-base-gui:2.1.0
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -57,7 +57,7 @@ COPY scripts/. /
 
 RUN mkdir -p /etc/BUILDS/ \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` > /etc/BUILDS/CONTAINER.txt \
- && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list \
+ && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > sources.list.d/php.list \
  && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
  && apt-get -y update \
  && apt-get -y upgrade \

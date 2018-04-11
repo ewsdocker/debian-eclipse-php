@@ -2,7 +2,7 @@
 # =========================================================================
 #
 #	Dockerfile
-#	  Dockerfile for eclipse-php-oxygen-2 + php-5.6
+#	  Dockerfile for eclipse-php-oxygen-3 + php-5.6
 #		in a Debian 9.4 (Stretch) docker container.
 #
 # =========================================================================
@@ -41,14 +41,14 @@ ENV DEBIAN_FRONTEND noninteractive
 #
 # =========================================================================
 
-ENV ECLIPSE-OXYV=3
+ENV ECLIPSE_OXYV=3
 
 #ENV ECLIPSE_HOST=http://pkgnginx 
-ENV ECLIPSE_HOST=http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/${ECLIPSE-OXYV}
+ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/${ECLIPSE_OXYV}"
 
-ENV ECLIPSE_PKG=eclipse-php-oxygen-${ECLIPSE-OXYV}-linux-gtk-x86_64.tar.gz 
+ENV ECLIPSE_PKG="eclipse-php-oxygen-${ECLIPSE_OXYV}-linux-gtk-x86_64.tar.gz" 
 ENV ECLIPSE_DIR=eclipse 
-ENV ECLIPSE_URL=${ECLIPSE_HOST}/${ECLIPSE_PKG}
+ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
 
 # =========================================================================
 

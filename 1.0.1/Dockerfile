@@ -2,13 +2,13 @@
 # =========================================================================
 #
 #	Dockerfile
-#	  Dockerfile for eclipse-php-oxygen-3a + php-5.6
+#	  Dockerfile for eclipse-php-oxygen-3 + php-5.6
 #		in a Debian 9.4 (Stretch) docker container.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 1.0.2
+# @version 1.0.1
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
 # @package ewsdocker/debian-eclipse-php
@@ -41,7 +41,7 @@ ENV DEBIAN_FRONTEND noninteractive
 #
 # =========================================================================
 
-ENV ECLIPSE_OXYV=3a
+ENV ECLIPSE_OXYV=3
 
 #ENV ECLIPSE_HOST=http://pkgnginx 
 ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/${ECLIPSE_OXYV}"

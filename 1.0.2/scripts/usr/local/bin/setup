@@ -1,18 +1,18 @@
 #!/bin/bash
-# =========================================================================
+#=========================================================================
 # =========================================================================
 #
-#	debian-eclipse-php.run
-#	  Sample run script for ewsdocker/debian-eclipse-php
+#	setup
+#	  Copy run scripts to /userbin.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.2
+# @version 0.0.1
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
 # @package ewsdocker/debian-eclipse-php
-# @subpackage debian-eclipse-php.run
+# @subpackage setup
 #
 # =========================================================================
 #
@@ -27,12 +27,6 @@
 # =========================================================================
 # =========================================================================
 
-docker run -e DISPLAY=unix${DISPLAY} \
-           -v /tmp/.X11-unix:/tmp/.X11-unix \
-           -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
-           -v /etc/localtime:/etc/localtime:ro \
-           -v ${HOME}/.config/eclipse:/root \
-           -v ${HOME}/docker:/workspace \
-           -v ${HOME}/source:/source \
-           --name=debian-eclipse-php \
-       ewsdocker/debian-eclipse-php:latest
+echo -n "Copying files to /userbin... "
+cp /usr/local/bin/*.run /userbin
+echo "done."

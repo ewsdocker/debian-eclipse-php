@@ -43,8 +43,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ENV ECLIPSE_OXYV=3a
 
-ENV ECLIPSE_HOST=http://pkgnginx 
-#ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/${ECLIPSE_OXYV}"
+#ENV ECLIPSE_HOST=http://pkgnginx 
+ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/${ECLIPSE_OXYV}"
 
 ENV ECLIPSE_PKG="eclipse-php-oxygen-${ECLIPSE_OXYV}-linux-gtk-x86_64.tar.gz" 
 ENV ECLIPSE_DIR=eclipse 

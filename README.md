@@ -3,7 +3,7 @@
 __Eclipse PDT (PHP Development) with Php 5.6 in a Debian Docker image.__  
 
 ____
-New Version: **1.0.4** (**latest**). _2018-04-13_.  
+New Version: **1.0.3** (**latest**). _2018-04-13_.  
 Stable Version: **1.0.0**
 _____________________
 

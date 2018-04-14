@@ -1,0 +1,37 @@
+#!/bin/bash
+# =========================================================================
+# =========================================================================
+#
+#	debian-eclipse-php2.run
+#	  Sample run script for debian-eclipse-php2.run
+#
+# =========================================================================
+#
+# @author Jay Wheeler.
+# @version 0.0.2
+# @copyright © 2018. EarthWalk Software.
+# @license Licensed under the Academic Free License version 3.0
+# @package ewsdocker/debian-eclipse-php
+# @subpackage debian-eclipse-php2.run
+#
+# =========================================================================
+#
+#	Copyright © 2018. EarthWalk Software
+#	Licensed under the Academic Free License, version 3.0.
+#
+#	Refer to the file named License.txt provided with the source,
+#	or from
+#
+#		http://opensource.org/licenses/academic.php
+#
+# =========================================================================
+# =========================================================================
+
+docker run -e DISPLAY=unix${DISPLAY} \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+           -v /etc/localtime:/etc/localtime:ro \
+           -v ${HOME}/.config/eclipse:/root \
+           -v ${HOME}/workspace:/workspace \
+           --name=debian-eclipse-php \
+        ewsdocker/debian-eclipse-php:latest

@@ -32,6 +32,6 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
            -v ${HOME}/.config/eclipse:/root \
-           -v /media/dev-2018/git/ewsdocker:/workspace \
+           -v ${HOME}/workspace:/workspace \
            --name=debian-eclipse-php \
         ewsdocker/debian-eclipse-php:latest

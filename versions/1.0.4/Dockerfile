@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 1.1.0
+# @version 1.0.4
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
 # @package ewsdocker/debian-eclipse-php
@@ -26,7 +26,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-base-gui:3.0.3
+FROM earthwalksoftware/debian-base-gui:2.1.1
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -50,7 +50,7 @@ ENV ECLIPSE_PKG="eclipse-php-oxygen-${ECLIPSE_OXYV}-linux-gtk-x86_64.tar.gz"
 ENV ECLIPSE_DIR=eclipse 
 ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
 
-ENV LMSBUILD_DOCKER="ewsdocker/debian-eclipse-php:1.1.0"
+ENV LMSBUILD_DOCKER="ewsdocker/debian-eclipse-php:1.0.4"
 ENV LMSBUILD_PACKAGE="setup v. 0.0.3"
 
 # =========================================================================

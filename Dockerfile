@@ -94,7 +94,7 @@ RUN mkdir -p /etc/BUILDS/ \
                php5.6-mcrypt \ 
                php5.6-mysqlnd \
                php5.6-phar \ 
-               php5.6-xml \hornyhorror.tumblr.com
+               php5.6-xml \
  && mkdir composer \ 
  && cd composer \
  && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer \

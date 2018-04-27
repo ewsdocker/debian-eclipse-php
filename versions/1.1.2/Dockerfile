@@ -3,43 +3,32 @@
 #
 #	Dockerfile
 #	  Dockerfile for eclipse-php-oxygen-3a + php-5.6
-#		in a Debian docker container.
+#		in a Debian 9.4 (Stretch) docker container.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 1.1.3
+# @version 1.1.2
 # @copyright © 2018. EarthWalk Software.
-# @license Licensed under the GNU General Public License, GPL-3.0-or-later.
+# @license Licensed under the Academic Free License version 3.0
 # @package ewsdocker/debian-eclipse-php
 # @subpackage Dockerfile
 #
 # =========================================================================
 #
 #	Copyright © 2018. EarthWalk Software
-#	Licensed under the GNU General Public License, GPL-3.0-or-later.
+#	Licensed under the Academic Free License, version 3.0.
 #
-#   This file is part of ewsdocker/debian-eclipse-php.
+#	Refer to the file named License.txt provided with the source,
+#	or from
 #
-#   ewsdocker/debian-eclipse-php is free software: you can redistribute 
-#   it and/or modify it under the terms of the GNU General Public License 
-#   as published by the Free Software Foundation, either version 3 of the 
-#   License, or (at your option) any later version.
-#
-#   ewsdocker/debian-eclipse-php is distributed in the hope that it will 
-#   be useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
-#   of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#   GNU General Public License for more details.
-#
-#   You should have received a copy of the GNU General Public License
-#   along with ewsdocker/debian-eclipse-php.  If not, see 
-#   <http://www.gnu.org/licenses/>.
+#		http://opensource.org/licenses/academic.php
 #
 # =========================================================================
 # =========================================================================
 FROM ewsdocker/debian-base-gui:3.0.4
 
-MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
+MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # =========================================================================
@@ -64,7 +53,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="1.1.3"
+ENV LMSBUILD_VERSION="1.1.2"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"

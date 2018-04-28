@@ -9,7 +9,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.1
+# @version 0.0.2
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
@@ -39,14 +39,6 @@
 # =========================================================================
 # =========================================================================
 
-lines=()
-mapfile -t lines < /etc/ewsdocker-builds.txt
-
 echo
-
-for line in "${lines[@]}"
-do
-  echo ${line}
-done
-
+echo $(cat /etc/BUILDS/CONTAINER.txt)
 echo

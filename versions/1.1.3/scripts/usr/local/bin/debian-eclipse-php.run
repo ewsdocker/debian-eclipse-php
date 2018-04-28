@@ -1,19 +1,18 @@
 #!/bin/bash
-
 # =========================================================================
 # =========================================================================
 #
-#	version
-#	  Print version information
+#	debian-eclipse-php.run
+#	  Sample run script for ewsdocker/debian-eclipse-php
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.1
+# @version 0.0.4
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
-# @subpackage version
+# @subpackage debian-eclipse-php.run
 #
 # =========================================================================
 #
@@ -39,14 +38,13 @@
 # =========================================================================
 # =========================================================================
 
-lines=()
-mapfile -t lines < /etc/ewsdocker-builds.txt
-
-echo
-
-for line in "${lines[@]}"
-do
-  echo ${line}
-done
-
-echo
+docker run -e DISPLAY=unix${DISPLAY} \
+           --mount type=bind,source=/tmp/.X11-unix,target=/tmp/.X11-unix \
+           --mount type=bind,source=${HOME}/.Xauthority,target=${HOME}/.Xauthority \
+           --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
+           --mount type=bind,source=${HOME}/.config/docker/eclipse/php,target=/root \
+           --mount type=bind,source=/media/dev-2018/git/ewsdocker,target=/project \
+           --mount type=bind,source=/media/dev-2018,target=/source \
+           --mount type=bind,source=/media/dev-2018/workspace,target=/workspace \
+           --name=debian-eclipse-php \
+       ewsdocker/debian-eclipse-php:latest

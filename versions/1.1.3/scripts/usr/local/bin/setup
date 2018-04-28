@@ -1,19 +1,18 @@
 #!/bin/bash
-
-# =========================================================================
+#=========================================================================
 # =========================================================================
 #
-#	version
-#	  Print version information
+#	setup
+#	  Copy run scripts to /userbin.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.1
+# @version 0.0.2
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
-# @subpackage version
+# @subpackage setup
 #
 # =========================================================================
 #
@@ -39,14 +38,15 @@
 # =========================================================================
 # =========================================================================
 
-lines=()
-mapfile -t lines < /etc/ewsdocker-builds.txt
+echo ""
 
-echo
+echo -n "Copying icon to configuration folder ... "
+cp /usr/local/share/eclipse/icon.xpm /root
 
-for line in "${lines[@]}"
-do
-  echo ${line}
-done
+echo ""
 
-echo
+echo -n "Copying files to /userbin... "
+cp /usr/local/bin/*.run /userbin
+
+echo "done."
+echo ""

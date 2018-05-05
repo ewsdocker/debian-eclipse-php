@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.4
+# @version 0.0.5
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
@@ -39,12 +39,12 @@
 # =========================================================================
 
 docker run -e DISPLAY=unix${DISPLAY} \
-           --mount type=bind,source=/tmp/.X11-unix,target=/tmp/.X11-unix \
-           --mount type=bind,source=${HOME}/.Xauthority,target=${HOME}/.Xauthority \
-           --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
-           --mount type=bind,source=${HOME}/.config/docker/eclipse/php,target=/root \
-           --mount type=bind,source=/media/dev-2018/git/ewsdocker,target=/project \
-           --mount type=bind,source=/media/dev-2018,target=/source \
-           --mount type=bind,source=/media/dev-2018/workspace,target=/workspace \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+           -v /etc/localtime:/etc/localtime,readonly \
+           -v ${HOME}/.config/docker/eclipse/php:/root \
+           -v /media/dev-2018/git/ewsdocker:/project \
+           -v /media/dev-2018:/source \
+           -v /media/dev-2018/workspace:/workspace \
            --name=debian-eclipse-php \
        ewsdocker/debian-eclipse-php:latest

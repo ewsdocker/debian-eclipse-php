@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=/usr/bin/docker start debian-eclipse-php
+Icon=~/.config/docker/eclipse/php/icon.xpm
+Type=Application
+Terminal=false
+GenericName=Eclipse-PHP
+Name=EclipsePHP
+StartupNotify=false
+Categories=Development

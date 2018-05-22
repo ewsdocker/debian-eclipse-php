@@ -2,16 +2,39 @@
 
 __Eclipse PDT (PHP Development) with Php 5.6 in a Debian Docker image.__  
 
-____
-New Version: **1.1.5** (**edge**). _2018-05-05_.  
-Stable Version: **1.1.0**
-_____________________
+____  
 
-**docker pull** will pull the **latest** image by default.  The Docker **latest** tag is based on the GitHub **master** source, which is the development version, and quite possibly **unstable**.  
+<table>
+  <tr>
+    <td><b>New Version:</b></td>
+    <td>1.1.5</td>
+    <td>(edge)</td>
+    <td>2018-05-05</td>
+  </tr>
+  <tr>
+    <td><b>Latest Version:</b></td>
+    <td>1.1.5</td>
+    <td>(latest)</td>
+    <td>2018-05-05</td>
+  </tr>
+  <tr>
+    <td><b>Stable Version:</b></td>
+    <td>1.1.0</td>
+    <td>(stable)</td>
+    <td>&nbsp;</td>
+  </tr>  
+</table>
+_____________________  
+
+**docker pull** will pull the **latest** image by default.  
+
+The Docker **edge** tag is based on the GitHub **master** source, which is the development version, and should be assumed to be **unstable**.  
+
+Other Docker versions (or tags) can be selected on the Docker [Tags](https://hub.docker.com/r/ewsdocker/debian-eclipse-php/tags/) page. 
+
+GitHub source branches and tags, if there are any, can be selected in the **Branch / Tag** selection box.  
 
 NOTE: If the _New Version_ version number is not in the **Tags**, the **latest** tag is still under test.  Testing will be complete when the _New Version_ tag exists.
-
-Other Docker versions (or tags) can be selected on the Docker [Tags](https://hub.docker.com/r/ewsdocker/debian-eclipse-php/tags/) page.  
 
 An explanation of the [Docker Tags](https://github.com/ewsdocker/debian-eclipse-php/wiki/DockerTags) is available on the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki).
 ____

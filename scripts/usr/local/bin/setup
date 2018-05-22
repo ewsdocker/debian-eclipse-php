@@ -43,6 +43,7 @@ echo ""
 echo -n "Copying icon to configuration folder ... "
 cp /usr/local/share/eclipse/icon.xpm /root
 
+echo "done."
 echo ""
 
 echo -n "Copying files to /userbin... "

@@ -62,7 +62,7 @@ cp /usr/local/bin/*.run /userbin
 echo "done."
 
 echo -n "Copying files to /local ... "
-cp /root/*.desktop /local
+cp /root/desktop/*.desktop /local
 echo "done."
 
 echo ""

@@ -7,9 +7,9 @@ ____
 <table>
   <tr>
     <td><b>New Version:</b></td>
-    <td>1.1.5</td>
+    <td>1.1.6</td>
     <td>(edge)</td>
-    <td>2018-05-05</td>
+    <td>2018-05-21</td>
   </tr>
   <tr>
     <td><b>Latest Version:</b></td>

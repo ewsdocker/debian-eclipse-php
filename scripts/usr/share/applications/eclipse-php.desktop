@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/usr/bin/docker start debian-eclipse-php
+Exec=~/bin/eclipse-php-start.run
 Icon=~/.config/docker/eclipse/php/icon.xpm
 Type=Application
 Terminal=false

@@ -1,18 +1,18 @@
 #!/bin/bash
-#=========================================================================
+# =========================================================================
 # =========================================================================
 #
-#	setup
-#	  Copy run scripts to /userbin.
+#	eclipse-php-setup.run
+#	  Script to run ewsdocker/debian-eclipse-php:latest setup
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.2
+# @version 0.0.1
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
-# @subpackage setup
+# @subpackage eclipse-php-setup.run
 #
 # =========================================================================
 #
@@ -38,47 +38,8 @@
 # =========================================================================
 # =========================================================================
 
-echo
-echo "********************************************************"
-echo
-
-lines=()
-mapfile -t lines < /etc/ewsdocker-builds.txt
-
-vers=""
-for line in "${lines[@]}"
-do
-  printf -v vers "%s%s\n" "${vers}" "${line}"
-done
-
-echo "${vers}"
-
-echo
-echo "********************************************************"
-echo
-
-echo -n "Copying icon to configuration folder ... "
-cp /usr/local/share/eclipse/icon.xpm /root
-
-echo "done."
-
-echo
-echo "********************************************************"
-echo
-
-echo -n "Copying .desktop files to /applications ... "
-cp /usr/local/bin/*.desktop /root
-echo "done."
-
-echo
-echo "********************************************************"
-echo
-
-echo -n "Copying files to /userbin ... "
-cp /usr/local/bin/*.run /userbin
-echo "done."
-
-echo
-echo "********************************************************"
-echo
-
+docker run --rm \
+           -v ${HOME}/.config/docker/eclipse/php:/root \
+           -v ${HOME}/.local/share/applications/:/applications \
+           -v ${HOME}/bin:/userbin \
+       ewsdocker/debian-eclipse-php setup

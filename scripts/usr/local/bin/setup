@@ -48,7 +48,7 @@ mapfile -t lines < /etc/ewsdocker-builds.txt
 vers=""
 for line in "${lines[@]}"
 do
-  printf -v vers "%s%s\n" "${vers}" "${line}"
+  printf -v vers "%s%s\n" "${line}" "${vers}"
 done
 
 echo "${vers}"

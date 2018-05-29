@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 1.1.6
+# @version 1.1.8
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
@@ -37,7 +37,8 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-base-gui:3.0.5
+#FROM ewsdocker/debian-base-gui:3.0.6
+FROM ewsdocker/debian-openjre:0.1.1
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -64,7 +65,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="1.1.6"
+ENV LMSBUILD_VERSION="1.1.8"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
@@ -80,16 +81,16 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
  && apt-get -y update \
  && apt-get -y upgrade \
  && apt-get -y install \
-               java-common \
-               libgtk2.0-bin \
-               libgtk-3-0 \
-               libgtk-3-bin \
-               libgtk-3-common \ 
-               libgtk2.0-0 \
-               libgtk2.0-common \
+#               java-common \
+#               libgtk2.0-bin \
+#               libgtk-3-0 \
+#               libgtk-3-bin \
+#               libgtk-3-common \ 
+#               libgtk2.0-0 \
+#               libgtk2.0-common \
                libwebkitgtk-3.0 \
-               openjdk-8-jre \
-               openjdk-8-jre-headless \
+#               openjdk-8-jre \
+#               openjdk-8-jre-headless \
                php5.6 \
                php5.6-apcu \ 
                php5.6-cgi \

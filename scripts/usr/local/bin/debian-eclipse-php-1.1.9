@@ -1,18 +1,18 @@
 #!/bin/bash
-#=========================================================================
+# =========================================================================
 # =========================================================================
 #
-#	setup
-#	  Copy run scripts to /userbin.
+#	debian-eclipse-php
+#	  Sample run script for ewsdocker/debian-eclipse-php
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.2
+# @version 0.0.6
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
-# @subpackage setup
+# @subpackage debian-eclipse-php.run
 #
 # =========================================================================
 #
@@ -38,15 +38,13 @@
 # =========================================================================
 # =========================================================================
 
-echo ""
-
-echo -n "Copying icon to configuration folder ... "
-cp /usr/local/share/eclipse/icon.xpm /root
-
-echo ""
-
-echo -n "Copying files to /userbin... "
-cp /usr/local/bin/*.run /userbin
-
-echo "done."
-echo ""
+docker run -e DISPLAY=unix${DISPLAY} \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+           -v /etc/localtime:/etc/localtime,readonly \
+           -v ${HOME}/.config/docker/eclipse/php:/root \
+           -v /media/dev-2018/git/ewsdocker:/project \
+           -v /media/dev-2018:/source \
+           -v /media/dev-2018/workspace:/workspace \
+           --name=debian-eclipse-php-1.1.9 \
+       ewsdocker/debian-eclipse-php:1.1.9

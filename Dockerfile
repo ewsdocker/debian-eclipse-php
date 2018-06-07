@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 1.1.8
+# @version 1.1.9
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
@@ -37,8 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-#FROM ewsdocker/debian-base-gui:3.0.6
-FROM ewsdocker/debian-openjre:0.1.1
+FROM ewsdocker/debian-openjre:0.1.3
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -58,21 +57,17 @@ ENV ECLIPSE_IDE=php
 ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}-linux-gtk-x86_64.tar.gz" 
 ENV ECLIPSE_DIR=eclipse 
 
-#ENV ECLIPSE_HOST=http://pkgnginx 
-ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"
+ENV ECLIPSE_HOST=http://pkgnginx 
+#ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"
 
 ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="1.1.8"
+ENV LMSBUILD_VERSION="1.1.9"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
-
-# =========================================================================
-
-COPY scripts/. / 
 
 # =========================================================================
 
@@ -81,16 +76,7 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
  && apt-get -y update \
  && apt-get -y upgrade \
  && apt-get -y install \
-#               java-common \
-#               libgtk2.0-bin \
-#               libgtk-3-0 \
-#               libgtk-3-bin \
-#               libgtk-3-common \ 
-#               libgtk2.0-0 \
-#               libgtk2.0-common \
                libwebkitgtk-3.0 \
-#               openjdk-8-jre \
-#               openjdk-8-jre-headless \
                php5.6 \
                php5.6-apcu \ 
                php5.6-cgi \
@@ -113,6 +99,14 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
  && tar -xvf ${ECLIPSE_PKG} \
  && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/local/bin/eclipse \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
+
+# =========================================================================
+
+COPY scripts/. /
+
+RUN chmod +x /usr/bin/lms/* \
+ && chmod 775 /usr/local/bin/* \
+ && chmod 600 /usr/local/share/applications/debian-eclipse-php.desktop 
 
 # =========================================================================
 

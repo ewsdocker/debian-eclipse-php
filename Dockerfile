@@ -104,7 +104,7 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
 
 COPY scripts/. /
 
-RUN cp /usr/local/share/eclipse/icon.xpm /usr/local/share/icons/eclipse-php.xpm \
+RUN cp /usr/local/share/eclipse/icon.xpm /usr/local/share/icons \
  && chmod +x /usr/bin/lms/* \
  && chmod 775 /usr/local/bin/* \
  && chmod 600 /usr/local/share/applications/debian-eclipse-php.desktop 

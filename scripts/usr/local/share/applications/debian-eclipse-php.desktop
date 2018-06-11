@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Exec=/home/jay/.local/bin/docker-deb-start-0.0.1 debian-eclipse-php-1.1.9
-Icon=/home/jay/.config/docker/eclipse/php/icon.xpm
+Icon=/home/jay/.local/share/icons/eclipse-php.xpm
 Type=Application
 Terminal=false
 GenericName=Eclipse-PHP

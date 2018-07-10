@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.6
+# @version 0.0.7
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
@@ -41,10 +41,10 @@
 docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
-           -v /etc/localtime:/etc/localtime,readonly \
+           -v /etc/localtime:/etc/localtime:ro \
            -v ${HOME}/.config/docker/eclipse/php:/root \
            -v /media/dev-2018/git/ewsdocker:/project \
            -v /media/dev-2018:/source \
            -v /media/dev-2018/workspace:/workspace \
-           --name=debian-eclipse-php-1.1.9 \
-       ewsdocker/debian-eclipse-php:1.1.9
+           --name=debian-eclipse-php-1.1.10 \
+       ewsdocker/debian-eclipse-php:1.1.10

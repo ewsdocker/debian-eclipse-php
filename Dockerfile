@@ -97,7 +97,7 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
  && cd /usr/local/share \
  && wget -q ${ECLIPSE_URL} \
  && tar -xvf ${ECLIPSE_PKG} \
- && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/local/bin/eclipse \
+ && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/bin/eclipse \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
 
 # =========================================================================
@@ -120,4 +120,4 @@ WORKDIR /workspace
 # =========================================================================
 
 ENTRYPOINT ["/my_init", "--quiet"]
-CMD ["/usr/local/bin/eclipse"]
+CMD ["/usr/bin/eclipse"]

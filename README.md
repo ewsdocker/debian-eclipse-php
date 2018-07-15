@@ -4,26 +4,14 @@ __Eclipse PDT (PHP Development) with Php 5.6 in a Debian Docker image.__
 
 ____  
 
-<table>
-  <tr>
-    <td><b>New Version:</b></td>
-    <td>1.1.6</td>
-    <td>(edge)</td>
-    <td>2018-05-21</td>
-  </tr>
-  <tr>
-    <td><b>Latest Version:</b></td>
-    <td>1.1.5</td>
-    <td>(latest)</td>
-    <td>2018-05-05</td>
-  </tr>
-  <tr>
-    <td><b>Stable Version:</b></td>
-    <td>1.1.0</td>
-    <td>(stable)</td>
-    <td>&nbsp;</td>
-  </tr>  
-</table>
+## ewsdocker/debian-eclipse-php Wiki  
+
+Please visit our [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart) for complete documentation of this docker image.  
+____  
+
+### About Docker Versions  
+
+Find out all that you need to know about the docker Tags, and the version of Eclipse PHP represented, at [Docker Tags](https://github.com/ewsdocker/debian-eclipse-php/wiki/DockerTags).  
 _____________________  
 
 **docker pull** will pull the **latest** image by default.  

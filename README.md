@@ -2,17 +2,9 @@
 
 __Eclipse PDT (PHP Development) with Php 5.6 in a Debian Docker image.__  
 
+## NOTE
 
-<table>
-  <tr>
-    <th colspan="3">NOTE</th>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;<ul><b>ewsdocker/debian-eclipse-php</b> is designed to be used on a Linux system configured to support <b>Docker</b> <i>user namespace</i>s.  Refer to <a href="https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview">ewsdocker Containers and Docker User Namespaces</a> for an overview and additional information.
-      </ul> 
-    </td>
-  </tr>
-</table>  
+**ewsdocker/debian-eclipse-php** is designed to be used on a Linux system configured to support **Docker** __user namespace__s.  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and additional information.  
 
 ____  
 

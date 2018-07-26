@@ -96,7 +96,7 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
                php5.6-xml \
  && mkdir composer \ 
  && cd composer \
- && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer \
+ && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer \
  && cd /usr/local/share \
  && wget -q ${ECLIPSE_URL} \
  && tar -xvf ${ECLIPSE_PKG} \

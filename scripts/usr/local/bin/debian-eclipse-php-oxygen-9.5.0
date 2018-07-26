@@ -42,9 +42,9 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v ${HOME}/.config/docker/eclipse/php:/root \
            -v /media/dev-2018/git/ewsdocker:/project \
            -v /media/dev-2018:/source \
            -v /media/dev-2018/workspace-oxygen-php:/workspace \
+           -v ${HOME}/.config/docker/debian-eclipse-php-oxygen-9.5.0:/root \
            --name=debian-eclipse-php-oxygen-9.5.0 \
        ewsdocker/debian-eclipse-php:oxygen-9.5.0

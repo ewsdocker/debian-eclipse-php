@@ -2,7 +2,7 @@
 # =========================================================================
 # =========================================================================
 #
-#	debian-eclipse-php
+#	debian-eclipse-php:photon
 #	  Sample run script for ewsdocker/debian-eclipse-php
 #
 # =========================================================================
@@ -46,5 +46,5 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /media/dev-2018/git/ewsdocker:/project \
            -v /media/dev-2018:/source \
            -v /media/dev-2018/workspace:/workspace \
-           --name=debian-eclipse-php-1.1.10 \
-       ewsdocker/debian-eclipse-php:1.1.10
+           --name=debian-eclipse-php-photon-9.5.0 \
+       ewsdocker/debian-eclipse-php:photon-9.5.0

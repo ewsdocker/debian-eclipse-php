@@ -1,43 +1,142 @@
 ## ewsdocker/debian-eclipse-php  
 
-__Eclipse PDT (PHP Development) with Php 5.6 in a Debian Docker image.__  
+__Eclipse PDT version with Php 5.6 in a Debian Docker image.__  
+____  
 
-## NOTE
+**NOTE**
+**ewsdocker/debian-eclipse-php** is designed to be used on a Linux system configured to support **Docker user namespaces** .  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and information on running **ewsdocker/debian-eclipse-php** on a system not configured for **Docker user namespaces**.
+____  
 
-**ewsdocker/debian-eclipse-php** is designed to be used on a Linux system configured to support **Docker** __user namespace__s.  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and additional information.  
+**ewsdocker/debian-eclipse-php Wiki**  
+
+Please visit the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart) for complete documentation of this docker image.  
+____  
+
+**Installing ewsdocker/debian-eclipse-php**  
+
+The following scripts will download the the selected **ewsdocker/debian-eclipse-php** image, create a container, setup and populate the directory structures, create the run-time scripts, and install the application's desktop file(s).  
+
+The _default_ values will install all directories and contents in the **docker host** user's home directory (refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart#mapping)),  
+
+**ewsdocker/debian-eclipse-php:photon-9.5.0**  
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-php-photon-9.5.0:/root \
+               --name=debian-eclipse-php-photon-9.5.0 \
+           ewsdocker/debian-eclipse-php:photon-9.5.0 lms-setup  
+
+____  
+  
+**ewsdocker/debian-eclipse-php:oxygen-9.5.0**  
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-php-oxygen-9.5.0:/root \
+               --name=debian-eclipse-php-oxygen-9.5.0 \
+           ewsdocker/debian-eclipse-php:oxygen-9.5.0 lms-setup  
 
 ____  
 
-## ewsdocker/debian-eclipse-php Wiki  
+**ewsdocker/debian-eclipse-php:1.1.10**  
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-php-oxygen-1.1.10:/root \
+               --name=debian-eclipse-php-oxygen-1.1.10 \
+           ewsdocker/debian-eclipse-php:1.1.10 lms-setup  
 
-Please visit our [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart) for complete documentation of this docker image.  
 ____  
 
-### About Docker Versions  
+Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart#mapping) for a discussion of **lms-setup** and what it does.  
 
-Find out all that you need to know about the docker Tags, and the version of Eclipse PHP represented, at [Docker Tags](https://github.com/ewsdocker/debian-eclipse-php/wiki/DockerTags).  
-_____________________  
+____  
 
-**docker pull** will pull the **latest** image by default.  
+**Running the installed scripts**
 
-The Docker **edge** tag is based on the GitHub **master** source, which is the development version, and should be assumed to be **unstable**.  
+After running the above command script, and using the settings indicated, the docker host directories, mapped as shown in the above tables, will be configured as follows:
 
-Other Docker versions (or tags) can be selected on the Docker [Tags](https://hub.docker.com/r/ewsdocker/debian-eclipse-php/tags/) page. 
++ the executable scripts have been copied to **~/bin**;  
++ the application desktop file(s) have been copied to **~/.local/share/applications**, and are availablie in any _task bar_ menu;  
++ the associated **debian-eclipse-php-"branch"-"version"** executable script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names;  
 
-GitHub source branches and tags, if there are any, can be selected in the **Branch / Tag** selection box.  
+____  
 
-NOTE: If the _New Version_ version number is not in the **Tags**, the **latest** tag is still under test.  Testing will be complete when the _New Version_ tag exists.
+**Executable scripts**  
 
-An explanation of the [Docker Tags](https://github.com/ewsdocker/debian-eclipse-php/wiki/DockerTags) is available on the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki).
-____
+**ewsdocker/debian-eclipse-php:photon-9.5.0**
+  
+    docker run -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v ${HOME}/source:/source \
+               -v ${HOME}/workspace:/workspace \
+               -v ${HOME}/git/ewsdocker:/project \
+               -v ${HOME}/.config/docker/debian-eclipse-php-photon-9.5.0:/root \
+               --name=debian-eclipse-php-photon-9.5.0 \
+          ewsdocker/debian-eclipse-php:photon-9.5.0  
 
-### Overview  
+**ewsdocker/debian-eclipse-php:oxygen-9.5.0**
+  
+    docker run -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v ${HOME}/source:/source \
+               -v ${HOME}/workspace:/workspace \
+               -v ${HOME}/git/ewsdocker:/project \
+               -v ${HOME}/.config/docker/debian-eclipse-php-oxygen-9.5.0:/root \
+               --name=debian-eclipse-php-oxygen-9.5.0 \
+           ewsdocker/debian-eclipse-php:oxygen-9.5.0  
 
-**ewsdocker/debian-eclipse-php** is built upon **ewsdocker/debian-base-gui:latest** and provides the current _Eclipse PDT_ version and _Php 5.6_ in a Docker image.  
+**ewsdocker/debian-eclipse-php:1.1.10**
+  
+    docker run -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v ${HOME}/source:/source \
+               -v ${HOME}/workspace:/workspace \
+               -v ${HOME}/git/ewsdocker:/project \
+               -v ${HOME}/.config/docker/debian-eclipse-php-1.1.10:/root \
+               --name=debian-eclipse-php-1.1.10 \
+           ewsdocker/debian-eclipse-php:1.1.10  
+____  
+Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
 
-### Wiki  
+____  
 
-For more information on **ewsdocker/debian-eclipse-php**, visit the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki).  
+**Persistence**  
+In order to persist the Eclipse application state, a location on the docker _host_ must be provided to store the necessary information.  This can be accomplished with the following volume option in the run command:
+
+    -v ${HOME}/.config/docker/debian-eclipse-php-"branch"-"version":/root  
+
+Since the information is stored in the docker _container_ **/root** directory, this statement maps the user's **~/.config/docker/debian-eclipse-php-"branch"-"version"** docker _host_ directory to the **/root** directory in the docker _container_.  
+____  
+**Timestamps**  
+It is important to keep the time and date on docker _host_ files that have been created and/or modified by the docker _containter_ synchronized with the docker _host_'s settings. This can be accomplished as follows:
+
+    -v /etc/localtime:/etc/localtime:ro  
+
+____  
+**About the X11 Server / GUI Stack**  
+The **ewsdocker/debian-eclipse-php** image is built on the [ewsdocker/debian-openjre](https://github.com/ewsdocker/debian-openjre/wiki) docker image, which is built on the [ewsdocker/debian-base-gui](https://github.com/ewsdocker/debian-base-gui/wiki) docker image. These two docker images provide the **X11-Server** stack and several **GUI** system elements.  The **X11-Server** stack is configured in the _docker run_ command as follows:
+
+    docker run -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+
+Since these options are _the same for all gui containers_, they should probably be the first options in the docker run command.  
 
 ____  
 
@@ -59,4 +158,4 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with **ewsdocker/debian-eclipse-php**.  If not, see 
 <http://www.gnu.org/licenses/>.  
-____  
+

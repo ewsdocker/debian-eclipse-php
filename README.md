@@ -51,8 +51,8 @@ ____
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-php-oxygen-1.1.10:/root \
-               --name=debian-eclipse-php-oxygen-1.1.10 \
+               -v ${HOME}/.config/docker/debian-eclipse-php-1.1.10:/root \
+               --name=debian-eclipse-php-1.1.10 \
            ewsdocker/debian-eclipse-php:1.1.10 lms-setup  
 
 ____  

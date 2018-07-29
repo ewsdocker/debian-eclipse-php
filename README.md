@@ -1,9 +1,12 @@
 ## ewsdocker/debian-eclipse-php  
 
-__Eclipse PDT version with Php 5.6 in a Debian Docker image.__  
+**Eclipse IDE for Php Development Tools (PDT) with Php 5.6 in a Debian-based Docker image.**  
+
+Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.
+
 ____  
 
-**NOTE**
+**NOTE**  
 **ewsdocker/debian-eclipse-php** is designed to be used on a Linux system configured to support **Docker user namespaces** .  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and information on running **ewsdocker/debian-eclipse-php** on a system not configured for **Docker user namespaces**.
 ____  
 

@@ -5,6 +5,12 @@
 Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.
 ____  
 
+**This is the master branch.  It's use is deprecated.**
+  
+Please switch to the **oxygen** (same **Eclipse IDE** as 1.1.10) or **photon** (newest **Eclipse IDE**) branch.
+
+____  
+
 **A Docker pre-built image is available from [ewsdocker/debian-eclipse-php](https://hub.docker.com/r/ewsdocker/debian-eclipse-php).**  
 
 ____  

@@ -1,15 +1,19 @@
 ## ewsdocker/debian-eclipse-php  
 
-__Eclipse PDT version with Php 5.6 in a Debian Docker image.__  
+**Eclipse IDE for Php Development Tools (PDT) with Php 5.6 in a Debian-based Docker image.**  
+
+Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.
 ____  
 
-**NOTE**
+**A Docker pre-built image is available from [ewsdocker/debian-eclipse-php](https://hub.docker.com/r/ewsdocker/debian-eclipse-php).**  
+
+____  
+
+**NOTE**  
 **ewsdocker/debian-eclipse-php** is designed to be used on a Linux system configured to support **Docker user namespaces** .  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and information on running **ewsdocker/debian-eclipse-php** on a system not configured for **Docker user namespaces**.
 ____  
 
-**ewsdocker/debian-eclipse-php Wiki**  
-
-Please visit the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart) for complete documentation of this docker image.  
+**Visit the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart) for complete documentation of this docker image.**  
 ____  
 
 **Installing ewsdocker/debian-eclipse-php**  
@@ -67,7 +71,7 @@ After running the above command script, and using the settings indicated, the do
 
 + the executable scripts have been copied to **~/bin**;  
 + the application desktop file(s) have been copied to **~/.local/share/applications**, and are availablie in any _task bar_ menu;  
-+ the associated **debian-eclipse-php-"branch"-"version"** executable script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names;  
++ the associated **debian-eclipse-php-"branch"-"version"** executable script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names.  
 
 ____  
 
@@ -113,6 +117,64 @@ ____
            ewsdocker/debian-eclipse-php:1.1.10  
 ____  
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
+
+____  
+
+**Regarding photon-edge and oxygen-edge**  
+
+For the very brave, if an _edge_ tag is available, these instructions will download, rename and install the _edge_ version.  Good luck.  
+
+**ewsdocker/debian-eclipse-php:photon-edge**  
+<ul>
+
+**photon-edge** is the development tag for the **9.5.1** release tag.
+
+    docker pull ewsdocker/debian-eclipse-php:photon-edge
+    docker tag ewsdocker/debian-eclipse-php:photon-edge ewsdocker/debian-eclipse-php:photon-9.5.1
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-php-photon-9.5.1:/root \
+               --name=debian-eclipse-php-photon-9.5.1 \
+           ewsdocker/debian-eclipse-php:photon-9.5.1 lms-setup  
+
+optional step:
+
+    docker rmi ewsdocker/debian-eclipse-php:photon-edge  
+
+To create and run the container, run **Eclipse PDT photon-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+
+    ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-php:photon-9.5.1  
+
+</ul>  
+
+**ewsdocker/debian-eclipse-php:oxygen-edge**  
+<ul>
+
+**oxygen-edge** is the development tag for the **9.5.1** release tag.
+
+    docker pull ewsdocker/debian-eclipse-php:oxygen-edge
+    docker tag ewsdocker/debian-eclipse-php:oxygen-edge ewsdocker/debian-eclipse-php:oxygen-9.5.1
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-eclipse-php-oxygen-9.5.1:/root \
+               --name=debian-eclipse-php-oxygen-9.5.1 \
+           ewsdocker/debian-eclipse-php:oxygen-9.5.1 lms-setup  
+
+optional step:
+
+    docker rmi ewsdocker/debian-eclipse-php:oxygen-edge  
+
+To create and run the container, run **Eclipse PDT oxygen-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+
+    ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-php:oxygen-9.5.1  
+
+</ul>  
 
 ____  
 

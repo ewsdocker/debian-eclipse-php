@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/home/jay/.local/bin/docker-deb-start-0.0.2 debian-eclipse-php:oxygen-9.5.0
+Exec=/home/jay/.local/bin/docker-deb-start-0.0.2 debian-eclipse-php:oxygen-9.5.1
 Icon=/home/jay/.local/share/icons/icon.xpm
 Type=Application
 Terminal=false
-GenericName=Eclipse-PHP Oxygen
-Name=EclipsePHP Oxygen
+GenericName=Eclipse PDT Oxygen-9.5.1
+Name=Eclipse PDT Oxygen-9.5.1
 StartupNotify=false
 Categories=Development

@@ -2,13 +2,13 @@
 # =========================================================================
 #
 #	Dockerfile
-#	  Dockerfile for eclipse-php-oxygen-3a + php-5.6
+#	  Dockerfile for Eclipse Oxygen IDE for PDT + php-5.6
 #		in a Debian docker container.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version photon-9.5.0
+# @version photon-9.5.1
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
@@ -64,7 +64,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="${ECLIPSE_RELEASE}-9.5.0"
+ENV LMSBUILD_VERSION="${ECLIPSE_RELEASE}-9.5.1"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
@@ -109,7 +109,7 @@ COPY scripts/. /
 
 RUN chmod +x /usr/bin/lms/* \
  && chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-eclipse-php-oxygen.desktop 
+ && chmod 600 /usr/local/share/applications/debian-eclipse-php-${LMSBUILD_VERSION}.desktop 
 
 # =========================================================================
 

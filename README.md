@@ -152,7 +152,7 @@ optional step:
 
 To create and run the container, run **Eclipse PDT photon-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-php:photon-9.5.1  
+    ~/.local/bin/debian-eclipse-php:photon-9.5.1  
 
 </ul>  
 
@@ -178,7 +178,7 @@ optional step:
 
 To create and run the container, run **Eclipse PDT oxygen-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/docker-deb-start-0.0.2 debian-eclipse-php:oxygen-9.5.1  
+    ~/.local/bin/debian-eclipse-php:oxygen-9.5.1  
 
 </ul>  
 

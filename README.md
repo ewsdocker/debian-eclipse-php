@@ -18,7 +18,7 @@ ____
 
 **Installing ewsdocker/debian-eclipse-php**  
 
-The following scripts will download the the selected **ewsdocker/debian-eclipse-php** image, create a container, setup and populate the directory structures, create the run-time scripts, and install the application's desktop file(s).  
+The following scripts will download the selected **ewsdocker/debian-eclipse-php** image, create a container, setup and populate the directory structures, create the run-time scripts, and install the application's desktop file(s).  
 
 The _default_ values will install all directories and contents in the **docker host** user's home directory (refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart#mapping)),  
 

@@ -43,8 +43,8 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
            -v /media/dev-2018:/source \
-           -v /media/dev-2018/workspace:/workspace \
            -v /media/dev-2018/git/ewsdocker:/project \
-           -v ${HOME}/.config/docker/debian-eclipse-php-photon-9.5.1:/root \
-           --name=debian-eclipse-php-photon-9.5.1 \
-       ewsdocker/debian-eclipse-php:photon-9.5.1
+           -v /media/dev-2018/workspace:/workspace \
+           -v ${HOME}/.config/docker/debian-eclipse-php-photon-9.5.2:/root \
+           --name=debian-eclipse-php-photon-9.5.2 \
+       ewsdocker/debian-eclipse-php:photon-9.5.2

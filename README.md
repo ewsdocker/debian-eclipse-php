@@ -1,6 +1,6 @@
-## ewsdocker/debian-eclipse-php  
+## ewsdocker/debian-eclipse-php:9.5.1  
 
-**Eclipse IDE for Php Development Tools (PDT) with Php 5.6 in a Debian-based Docker image.**  
+**Eclipse IDE for Php Development Tools (PDT) with Php 5.6 in a Debian 9.5 Docker image.**  
 
 Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.
 ____  

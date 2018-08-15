@@ -1,11 +1,11 @@
-## ewsdocker/debian-eclipse-php  
+### ewsdocker/debian-eclipse-php:9.5.1  
 
-**Eclipse IDE for Php Development Tools (PDT) with Php 5.6 in a Debian-based Docker image.**  
+**Eclipse IDE for Php Development Tools (PDT) with Php 5.6 in a Debian 9.5 Docker image.**  
 
 Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.
 ____  
 
-**A Docker pre-built image is available from [ewsdocker/debian-eclipse-php](https://hub.docker.com/r/ewsdocker/debian-eclipse-php).**  
+**A pre-built Docker image is available from [ewsdocker/debian-eclipse-php](https://hub.docker.com/r/ewsdocker/debian-eclipse-php).**  
 
 ____  
 
@@ -14,6 +14,23 @@ ____
 ____  
 
 **Visit the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart) for complete documentation of this docker image.**  
+____  
+
+**About the size of the image**  
+
+The main design specifications of the <b>ewsdocker</b> desktop application images are:  
+<ol>
+ <li>Provide the same desktop experience as the user would have on a full application installation on a host desktop (including desktop menu interface, audio, video, multimedia, ...);</li>
+ <li>Install the latest release directly from the software vendor's repository, or a certified mirror, reducing dependencies on host operating system implementations of the application;</li>
+ <li>Leverage <b>Docker</b> container capabilities to 
+ <ol type="a">
+  <li>provide isolation of the <b>Docker</b> container applications from the <b>Docker</b> host;</li>
+ <li>provide persistence of application settings between <b>docker run</b> commands, and between future releases, allowing fast container deletion and re-creation; and</li><li>quickly perform container replications, container updates, and recovery from software malfunction/corruption.</li></ol></ol>
+
+Most of the <b>ewsdocker</b> desktop application images are based on the latest <b>Debian</b> docker image, since fewer problems have been encountered when implementing the desktop applications on that platform.  
+<br>
+Obviously, these <b>Docker</b> images tend to be rather large compared to most <b>Docker</b> images. It may take a bit longer to download, but the convenience of having the application in a <b>docker image</b> is worth the small, (usually) one time investment in download time.
+
 ____  
 
 **Installing ewsdocker/debian-eclipse-php**  

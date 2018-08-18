@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version photon-9.5.2
+# @version 9.5.2-photon
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
@@ -64,7 +64,8 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="${ECLIPSE_RELEASE}-9.5.2"
+ENV LMSBUILD_RELVER="9.5.2"
+ENV LMSBUILD_VERSION="${LMSBUILD_RELVER}-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 

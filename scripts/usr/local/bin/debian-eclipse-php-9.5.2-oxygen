@@ -44,7 +44,7 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /etc/localtime:/etc/localtime:ro \
            -v /media/dev-2018/git/ewsdocker:/project \
            -v /media/dev-2018:/source \
-           -v /media/dev-2018/workspace-oxygen-php:/workspace \
-           -v ${HOME}/.config/docker/debian-eclipse-php-oxygen-9.5.2:/root \
-           --name=debian-eclipse-php-oxygen-9.5.2 \
-       ewsdocker/debian-eclipse-php:oxygen-9.5.2
+           -v /media/dev-2018/workspace-php-9.5.2-oxygen:/workspace \
+           -v ${HOME}/.config/docker/debian-eclipse-php-9.5.2-oxygen:/root \
+           --name=debian-eclipse-php-9.5.2-oxygen \
+       ewsdocker/debian-eclipse-php:9.5.2-oxygen

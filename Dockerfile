@@ -64,7 +64,8 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="${ECLIPSE_RELEASE}-9.5.2"
+ENV LMSBUILD_RELVER="9.5.2"
+ENV LMSBUILD_VERSION="${LMSBUILD_RELVER}-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
@@ -102,15 +103,16 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
  && tar -xvf ${ECLIPSE_PKG} \
  && rm ${ECLIPSE_PKG} \
  && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/bin/eclipse \
- && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
-
+ && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt \ 
+ && apt-get clean all
+ 
 # =========================================================================
 
 COPY scripts/. /
 
 RUN chmod +x /usr/bin/lms/* \
  && chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-eclipse-php-${LMSBUILD_VERSION}.desktop 
+ && chmod 600 /usr/local/share/applications/debian-eclipse-${ECLIPSE_IDE}-${LMSBUILD_VERSION}.desktop 
 
 # =========================================================================
 

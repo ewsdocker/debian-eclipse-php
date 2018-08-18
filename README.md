@@ -5,7 +5,7 @@
 Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.
 ____  
 
-**A pre-built Docker image is available from [ewsdocker/debian-eclipse-php](https://hub.docker.com/r/ewsdocker/debian-eclipse-php).**  
+**Pre-built Docker images are available from [ewsdocker/debian-eclipse-php](https://hub.docker.com/r/ewsdocker/debian-eclipse-php).**  
 
 ____  
 
@@ -18,18 +18,19 @@ ____
 
 **About the size of the image**  
 
-The main design specifications of the <b>ewsdocker</b> desktop application images are:  
-<ol>
- <li>Provide the same desktop experience as the user would have on a full application installation on a host desktop (including desktop menu interface, audio, video, multimedia, ...);</li>
- <li>Install the latest release directly from the software vendor's repository, or a certified mirror, reducing dependencies on host operating system implementations of the application;</li>
- <li>Leverage <b>Docker</b> container capabilities to 
- <ol type="a">
-  <li>provide isolation of the <b>Docker</b> container applications from the <b>Docker</b> host;</li>
- <li>provide persistence of application settings between <b>docker run</b> commands, and between future releases, allowing fast container deletion and re-creation; and</li><li>quickly perform container replications, container updates, and recovery from software malfunction/corruption.</li></ol></ol>
+The main design specifications of the **ewsdocker** desktop application images are:  
 
-Most of the <b>ewsdocker</b> desktop application images are based on the latest <b>Debian</b> docker image, since fewer problems have been encountered when implementing the desktop applications on that platform.  
-<br>
-Obviously, these <b>Docker</b> images tend to be rather large compared to most <b>Docker</b> images. It may take a bit longer to download, but the convenience of having the application in a <b>docker image</b> is worth the small, (usually) one time investment in download time.
+  + Provide the same desktop experience as the user would have on a full application installation on a host desktop (including desktop menu interface, audio, video, multimedia, ...);  
+  + Install the latest release directly from the software vendor's repository, or a certified mirror, reducing dependencies on host operating system implementations of the application;  
+  + Leverage **Docker** container capabilities to 
+
+   - provide isolation of the **Docker** container applications from the **Docker** host;  
+   - provide persistence of application settings between **docker run** commands, and between future releases, allowing fast container deletion and re-creation; and  
+   - quickly perform container replications, container updates, and recovery from software malfunction/corruption.
+
+Most of the **ewsdocker** desktop application images are based on the latest **Debian** docker image, since fewer problems have been encountered when implementing the desktop applications on that platform.  
+  
+Obviously, these **Docker** images tend to be rather large compared to most **Docker** images. It may take a bit longer to download, but the convenience of having the application in a **docker image** is worth the small, (usually) one time investment in download time.
 
 ____  
 

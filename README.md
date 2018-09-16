@@ -2,7 +2,9 @@
 
 **Eclipse IDE for Php Development Tools (PDT) with Php 5.6 in a Debian 9.5 Docker image.**  
 
-Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.  The success of the **9.5.0-oxygen version** marks the end of the **1.10.0** branch.  Switching to **9.5.3-oxygen** is the only way to get security and release updates for the **Eclipse IDE Oxygen** version in a **docker** container.  
+Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.  
+
+The success of the **9.5.0-oxygen version** marks the end of the **1.10.0** branch.  Switching to **9.5.3-oxygen** is the only way to get security and release updates for the **Eclipse IDE Oxygen** version in a **docker** container.  
  
 ____  
 

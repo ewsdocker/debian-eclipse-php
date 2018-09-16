@@ -37,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:10-jre-9.5.4
+FROM ewsdocker/debian-openjre:10-jre-9.5.5
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -80,6 +80,9 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
  && apt-get -y update \
  && apt-get -y upgrade \
  && apt-get -y install \
+			   libgtk-3-0 \
+               libgtk-3-bin \
+               libgtk-3-common \ 
                libwebkitgtk-3.0 \
                php5.6 \
                php5.6-apcu \ 

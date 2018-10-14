@@ -4,8 +4,6 @@
 
 Now with support branches for **Eclipse IDE Photon** and **Eclipse IDE Oxygen** versions.  
 
-The success of the **9.5.0-oxygen version** marks the end of the **1.10.0** branch.  Switching to **9.5.4-oxygen** is the only way to get security and release updates for the **Eclipse IDE Oxygen** version in a **docker** container.  
- 
 ____  
 
 **Pre-built Docker images are available from [ewsdocker/debian-eclipse-php](https://hub.docker.com/r/ewsdocker/debian-eclipse-php).**  

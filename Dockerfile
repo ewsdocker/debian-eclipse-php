@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version oxygen-9.5.3
+# @version 9.5.4-oxygen
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
@@ -37,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:10-jre-9.5.5
+FROM ewsdocker/debian-openjre:9.5.7-gtk3
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -57,14 +57,14 @@ ENV ECLIPSE_IDE=php
 ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}-linux-gtk-x86_64.tar.gz" 
 ENV ECLIPSE_DIR=eclipse 
 
-#ENV ECLIPSE_HOST=http://pkgnginx 
-ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"
+ENV ECLIPSE_HOST=http://alpine-nginx-pkgcache 
+#ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"
 
 ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_RELVER="9.5.3"
+ENV LMSBUILD_RELVER="9.5.4"
 ENV LMSBUILD_VERSION="${LMSBUILD_RELVER}-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_REPO=ewsdocker 
@@ -80,9 +80,6 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
  && apt-get -y update \
  && apt-get -y upgrade \
  && apt-get -y install \
-			   libgtk-3-0 \
-               libgtk-3-bin \
-               libgtk-3-common \ 
                libwebkitgtk-3.0 \
                php5.6 \
                php5.6-apcu \ 
@@ -115,7 +112,8 @@ COPY scripts/. /
 
 RUN chmod +x /usr/bin/lms/* \
  && chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-eclipse-${ECLIPSE_IDE}-${LMSBUILD_VERSION}.desktop 
+ && chmod 600 /usr/local/share/applications/debian-eclipse-${ECLIPSE_IDE}-${LMSBUILD_VERSION}.desktop \
+ && chmod 600 /usr/local/share/applications/debian-eclipse-${ECLIPSE_IDE}.desktop 
 
 # =========================================================================
 

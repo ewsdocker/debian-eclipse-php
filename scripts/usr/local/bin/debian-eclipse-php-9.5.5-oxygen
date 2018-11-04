@@ -39,12 +39,12 @@
 # =========================================================================
 
 docker run -e DISPLAY=unix${DISPLAY} \
-           -v /tmp/.X11-unix:/tmp/.X11-unix \
-           -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
-           -v /etc/localtime:/etc/localtime:ro \
-           -v /media/dev-2018/git/ewsdocker:/project \
-           -v /media/dev-2018:/source \
-           -v /media/dev-2018/workspace-php-9.5.5-oxygen:/workspace \
-           -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5-oxygen:/root \
-           --name=debian-eclipse-php-9.5.5-oxygen \
-       ewsdocker/debian-eclipse-php:9.5.5-oxygen
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v /etc/localtime:/etc/localtime:ro \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5:/root \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5/oxygen/workspace:/workspace \
+               -v ${HOME}/Development:/Development \
+               -v ${HOME}/Source:/Source \
+               --name=debian-eclipse-php-9.5.5-oxygen \
+           ewsdocker/debian-eclipse-php:9.5.5-oxygen

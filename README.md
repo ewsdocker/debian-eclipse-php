@@ -56,33 +56,20 @@ The _default_ values will install all directories and contents in the **docker h
 
 ____  
   
-**ewsdocker/debian-eclipse-php:9.5.5-photon**  
+**ewsdocker/debian-eclipse-php:9.5.5**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5-photon:/root \
-               --name=debian-eclipse-php-9.5.5-photon \
-           ewsdocker/debian-eclipse-php:9.5.5-photon lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5:/root \
+               --name=debian-eclipse-php-9.5.5 \
+           ewsdocker/debian-eclipse-php:9.5.5 lms-setup  
 
 ____  
   
 #### Oxygen
-**ewsdocker/debian-eclipse-php:latest**  
-  
-    docker run --rm \
-               -v ${HOME}/bin:/userbin \
-               -v ${HOME}/.local:/usrlocal \
-               -e LMS_BASE="${HOME}/.local" \
-               -e LMSBUILD_VERSION="latest" \
-               -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-php-latest:/root \
-               --name=debian-eclipse-php-latest \
-           ewsdocker/debian-eclipse-php lms-setup  
-
-____  
 
 **ewsdocker/debian-eclipse-php:9.5.5-oxygen**  
   
@@ -118,16 +105,16 @@ ____
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
-               -v /media/dev-2018:/source \
-               -v /media/dev-2018/git/ewsdocker:/project \
-               -v /media/dev-2018/workspace/eclipse/php/5.6/photon:/workspace \
                -v ${HOME}/.config/docker/debian-eclipse-php-latest:/root \
+               -v ${HOME}/.config/docker/debian-eclipse-php-latest/workspace:/workspace \
+               -v ${HOME}/Development:/Development \
+               -v ${HOME}/Source:/Source \
                --name=debian-eclipse-php-latest \
            ewsdocker/debian-eclipse-php  
 
 ____  
 
-**ewsdocker/debian-eclipse-php:9.5.5-photon**
+**ewsdocker/debian-eclipse-php:9.5.5**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -143,19 +130,6 @@ ____
 ____  
 
 #### Oxygen
-
-**ewsdocker/debian-eclipse-php:latest**
-  
-    docker run -e DISPLAY=unix${DISPLAY} \
-               -v /tmp/.X11-unix:/tmp/.X11-unix \
-               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
-               -v /etc/localtime:/etc/localtime:ro \
-               -v /media/dev-2018/git/ewsdocker:/project \
-               -v /media/dev-2018:/source \
-               -v ${HOME}/workspace/debian/eclipse/php/5.6/oxygen/latest:/workspace \
-               -v ${HOME}/.config/docker/debian-eclipse-php-latest:/root \
-               --name=debian-eclipse-php-latest \
-           ewsdocker/debian-eclipse-php  
 
 **ewsdocker/debian-eclipse-php:9.5.5-oxygen**
   

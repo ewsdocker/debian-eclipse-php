@@ -42,9 +42,10 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v /media/dev-2018:/source \
-           -v /media/dev-2018/git/ewsdocker:/project \
-           -v /media/dev-2018/workspace/eclipse/php/5.6/photon:/workspace \
            -v ${HOME}/.config/docker/debian-eclipse-php-latest:/root \
+           -v ${HOME}/.config/docker/debian-eclipse-php-latest/workspace:/workspace \
+           -v ${HOME}/Development:/Development \
+           -v ${HOME}/Source:/Source \
            --name=debian-eclipse-php-latest \
        ewsdocker/debian-eclipse-php
+

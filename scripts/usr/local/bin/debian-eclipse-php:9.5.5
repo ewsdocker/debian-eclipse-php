@@ -2,13 +2,13 @@
 # =========================================================================
 # =========================================================================
 #
-#	debian-eclipse-php:photon
+#	debian-eclipse-php-photon
 #	  Sample run script for ewsdocker/debian-eclipse-php
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.5-photon
+# @version 9.5.5
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
@@ -42,9 +42,10 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v /media/dev-2018:/source \
-           -v /media/dev-2018/git/ewsdocker:/project \
-           -v /media/dev-2018/workspace-9.5.5-photon:/workspace \
-           -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5-photon:/root \
-           --name=debian-eclipse-php-9.5.5-photon \
-       ewsdocker/debian-eclipse-php:9.5.5-photon
+           -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5:/root \
+           -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5/workspace:/workspace \
+           -v ${HOME}/Development:/Development \
+           -v ${HOME}/Source:/Source \
+           --name=debian-eclipse-php-9.5.5 \
+       ewsdocker/debian-eclipse-php:9.5.5
+

@@ -120,12 +120,12 @@ ____
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/source:/source \
-               -v ${HOME}/workspace:/workspace \
-               -v ${HOME}/git/ewsdocker:/project \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5-photon:/root \
-               --name=debian-eclipse-php-9.5.5-photon \
-          ewsdocker/debian-eclipse-php:9.5.5-photon  
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5:/root \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5/workspace:/workspace \
+               -v ${HOME}/Development:/Development \
+               -v ${HOME}/Source:/Source \
+               --name=debian-eclipse-php-9.5.5 \
+           ewsdocker/debian-eclipse-php:9.5.5  
 
 ____  
 
@@ -137,10 +137,10 @@ ____
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/source:/source \
-               -v ${HOME}/workspace:/workspace \
-               -v ${HOME}/git/ewsdocker:/project \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5-oxygen:/root \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5:/root \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5/oxygen/workspace:/workspace \
+               -v ${HOME}/Development:/Development \
+               -v ${HOME}/Source:/Source \
                --name=debian-eclipse-php-9.5.5-oxygen \
            ewsdocker/debian-eclipse-php:9.5.5-oxygen  
 
@@ -175,7 +175,7 @@ optional step:
 
     docker rmi ewsdocker/debian-eclipse-php:edge-photon  
 
-To create and run the container, run **Eclipse Php5.6 Photon (9.5.6)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse Photon Php5.6 (9.5.6)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
     ~/.local/bin/debian-eclipse-php:9.5.6-photon  
 
@@ -202,7 +202,7 @@ optional step:
 
     docker rmi ewsdocker/debian-eclipse-php:edge-oxygen  
 
-To create and run the container, run **Eclipse Php5.6 Oxygen (9.5.6)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse Oxygen Php5.6 (9.5.6)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
     ~/.local/bin/debian-eclipse-php:9.5.6-oxygen  
 

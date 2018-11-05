@@ -17,24 +17,6 @@ ____
 **Visit the [ewsdocker/debian-eclipse-php Wiki](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart) for complete documentation of this docker image.**  
 ____  
 
-**About the size of the image**  
-
-The main design specifications of the **ewsdocker** desktop application images are:  
-
-  + Provide the same desktop experience as the user would have on a full application installation on a host desktop (including desktop menu interface, audio, video, multimedia, ...);  
-  + Install the latest release directly from the software vendor's repository, or a certified mirror, reducing dependencies on host operating system implementations of the application;  
-  + Leverage **Docker** container capabilities to 
-
-   - provide isolation of the **Docker** container applications from the **Docker** host;  
-   - provide persistence of application settings between **docker run** commands, and between future releases, allowing fast container deletion and re-creation; and  
-   - quickly perform container replications, container updates, and recovery from software malfunction/corruption.
-
-Most of the **ewsdocker** desktop application images are based on the latest **Debian** docker image, since fewer problems have been encountered when implementing the desktop applications on that platform.  
-  
-Obviously, these **Docker** images tend to be rather large compared to most **Docker** images. It may take a bit longer to download, but the convenience of having the application in a **docker image** is worth the small, (usually) one time investment in download time.
-
-____  
-
 ### Installing ewsdocker/debian-eclipse-php  
 
 The following scripts will download the selected **ewsdocker/debian-eclipse-php** image, create a container, setup and populate the directory structures, create the run-time scripts, and install the application's desktop file(s).  
@@ -147,6 +129,24 @@ ____
 ____  
 
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-php/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
+
+____  
+
+#### About the size of the image  
+
+The main design specifications of the **ewsdocker** desktop application images are:  
+
+  + Provide the same desktop experience as the user would have on a full application installation on a host desktop (including desktop menu interface, audio, video, multimedia, ...);  
+  + Install the latest release directly from the software vendor's repository, or a certified mirror, reducing dependencies on host operating system implementations of the application;  
+  + Leverage **Docker** container capabilities to 
+
+   - provide isolation of the **Docker** container applications from the **Docker** host;  
+   - provide persistence of application settings between **docker run** commands, and between future releases, allowing fast container deletion and re-creation; and  
+   - quickly perform container replications, container updates, and recovery from software malfunction/corruption.
+
+Most of the **ewsdocker** desktop application images are based on the latest **Debian** docker image, since fewer problems have been encountered when implementing the desktop applications on that platform.  
+  
+Obviously, these **Docker** images tend to be rather large compared to most **Docker** images. It may take a bit longer to download, but the convenience of having the application in a **docker image** is worth the small, (usually) one time investment in download time.
 
 ____  
 

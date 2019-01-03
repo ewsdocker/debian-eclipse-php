@@ -8,15 +8,15 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.6-photon
-# @copyright © 2018. EarthWalk Software.
+# @version 9.6.0
+# @copyright © 2018, 2019. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
 # @subpackage Dockerfile
 #
 # =========================================================================
 #
-#	Copyright © 2018. EarthWalk Software
+#	Copyright © 2018, 2019. EarthWalk Software
 #	Licensed under the GNU General Public License, GPL-3.0-or-later.
 #
 #   This file is part of ewsdocker/debian-eclipse-php.
@@ -37,20 +37,25 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:9.5.9-gtk3
+FROM ewsdocker/debian-openjre:9.6.0-gtk3
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # =========================================================================
 #
-#     The following must be modified before running a build,
-#         as there is no way to specify them in the build 
-#         command.
+#   ARG_SOURCE <== url of the local source (http://alpine-nginx-pkgcache), 
+#                   otherwise external source if not set.
 #
-# 	  Eclipse repository address
+#       Build option:
+#         --build-arg ARG_SOURCE=http://alpine-nginx-pkgcache --network=pkgnet
 #
 # =========================================================================
+
+ARG ARG_SOURCE
+
+# =========================================================================
+
 ENV ECLIPSE_RELEASE=photon 
 ENV ECLIPSE_VERS=R 
 ENV ECLIPSE_IDE=php 
@@ -58,20 +63,20 @@ ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}-linux
 ENV ECLIPSE_DIR=eclipse 
 
 #ENV ECLIPSE_HOST=http://alpine-nginx-pkgcache
-ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"
+ENV ECLIPSE_HOST=${ARG_SOURCE:-"http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"}
 
 ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_RELVER="9.5.6"
+ENV LMSBUILD_RELVER="9.6.0"
 #ENV LMSBUILD_VERSION="${LMSBUILD_RELVER}-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_VERSION="${LMSBUILD_RELVER}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-openjre:9.5.9-gtk3"
+ENV LMSBUILD_PARENT="debian-openjre:9.6.0-gtk3"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
 
@@ -105,6 +110,7 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
  && tar -xvf ${ECLIPSE_PKG} \
  && rm ${ECLIPSE_PKG} \  
  && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/bin/eclipse \
+ && apt-get clean all \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
 
 # =========================================================================

@@ -44,6 +44,18 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # =========================================================================
 #
+#   ARG_SOURCE <== url of the local source (http://alpine-nginx-pkgcache), 
+#                   otherwise external source if not set.
+#
+#       Build option:
+#         --build-arg ARG_SOURCE=http://alpine-nginx-pkgcache --network=pkgnet
+#
+# =========================================================================
+
+ARG ARG_SOURCE
+
+# =========================================================================
+#
 #     The following must be modified before running a build,
 #         as there is no way to specify them in the build 
 #         command.
@@ -58,7 +70,7 @@ ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}-linux
 ENV ECLIPSE_DIR=eclipse 
 
 #ENV ECLIPSE_HOST=http://alpine-nginx-pkgcache 
-ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"
+ENV ECLIPSE_HOST=${ARG_SOURCE:-"http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"}
 
 ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
  

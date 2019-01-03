@@ -8,15 +8,15 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.6
-# @copyright © 2018. EarthWalk Software.
+# @version 9.6.0
+# @copyright © 2018, 2019. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-php
 # @subpackage debian-eclipse-php.run
 #
 # =========================================================================
 #
-#	Copyright © 2018. EarthWalk Software
+#	Copyright © 2018, 2019. EarthWalk Software
 #	Licensed under the GNU General Public License, GPL-3.0-or-later.
 #
 #   This file is part of ewsdocker/debian-eclipse-php.
@@ -42,9 +42,9 @@ docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.6:/root \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.6/oxygen/workspace:/workspace \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.0:/root \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.0/oxygen/workspace:/workspace \
                -v ${HOME}/Development:/Development \
                -v ${HOME}/Source:/Source \
-               --name=debian-eclipse-php-9.5.6-oxygen \
-           ewsdocker/debian-eclipse-php:9.5.6-oxygen
+               --name=debian-eclipse-php-9.6.0-oxygen \
+           ewsdocker/debian-eclipse-php:9.6.0-oxygen

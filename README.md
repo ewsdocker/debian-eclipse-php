@@ -1,4 +1,4 @@
-### ewsdocker/debian-eclipse-php:9.5.5  
+### ewsdocker/debian-eclipse-php:9.6.0  
 
 **Eclipse IDE for Php Development Tools (PDT) with Php 5.6 in a Debian 9.5 Docker image.**  
 
@@ -38,31 +38,31 @@ The _default_ values will install all directories and contents in the **docker h
 
 ____  
   
-**ewsdocker/debian-eclipse-php:9.5.5**  
+**ewsdocker/debian-eclipse-php:9.6.0**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5:/root \
-               --name=debian-eclipse-php-9.5.5 \
-           ewsdocker/debian-eclipse-php:9.5.5 lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.0:/root \
+               --name=debian-eclipse-php-9.6.0 \
+           ewsdocker/debian-eclipse-php:9.6.0 lms-setup  
 
 ____  
   
 #### Oxygen
 
-**ewsdocker/debian-eclipse-php:9.5.5-oxygen**  
+**ewsdocker/debian-eclipse-php:9.6.0-oxygen**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5-oxygen:/root \
-               --name=debian-eclipse-php-9.5.5-oxygen \
-           ewsdocker/debian-eclipse-php:9.5.5-oxygen lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.0-oxygen:/root \
+               --name=debian-eclipse-php-9.6.0-oxygen \
+           ewsdocker/debian-eclipse-php:9.6.0-oxygen lms-setup  
 
 ____  
 
@@ -96,35 +96,35 @@ ____
 
 ____  
 
-**ewsdocker/debian-eclipse-php:9.5.5**
+**ewsdocker/debian-eclipse-php:9.6.0**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5:/root \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5/workspace:/workspace \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.0:/root \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.0/workspace:/workspace \
                -v ${HOME}/Development:/Development \
                -v ${HOME}/Source:/Source \
-               --name=debian-eclipse-php-9.5.5 \
-           ewsdocker/debian-eclipse-php:9.5.5  
+               --name=debian-eclipse-php-9.6.0 \
+           ewsdocker/debian-eclipse-php:9.6.0  
 
 ____  
 
 #### Oxygen
 
-**ewsdocker/debian-eclipse-php:9.5.5-oxygen**
+**ewsdocker/debian-eclipse-php:9.6.0-oxygen**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5:/root \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.5/oxygen/workspace:/workspace \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.0:/root \
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.0/oxygen/workspace:/workspace \
                -v ${HOME}/Development:/Development \
                -v ${HOME}/Source:/Source \
-               --name=debian-eclipse-php-9.5.5-oxygen \
-           ewsdocker/debian-eclipse-php:9.5.5-oxygen  
+               --name=debian-eclipse-php-9.6.0-oxygen \
+           ewsdocker/debian-eclipse-php:9.6.0-oxygen  
 
 ____  
 
@@ -158,26 +158,26 @@ For the very brave, if an _edge_ tag is available, these instructions will downl
 
 **ewsdocker/debian-eclipse-php:edge-photon**  
 
-**edge-photon** is the development tag for the **9.5.6** release tag.
+**edge-photon** is the development tag for the **9.6.1** release tag.
 
     docker pull ewsdocker/debian-eclipse-php:edge-photon
-    docker tag ewsdocker/debian-eclipse-php:edge-photon ewsdocker/debian-eclipse-php:9.5.6-photon
+    docker tag ewsdocker/debian-eclipse-php:edge-photon ewsdocker/debian-eclipse-php:9.6.1-photon
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.6-photon:/root \
-               --name=debian-eclipse-php-9.5.6-photon \
-           ewsdocker/debian-eclipse-php:9.5.6-photon lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.1-photon:/root \
+               --name=debian-eclipse-php-9.6.1-photon \
+           ewsdocker/debian-eclipse-php:9.6.1-photon lms-setup  
 
 optional step:
 
     docker rmi ewsdocker/debian-eclipse-php:edge-photon  
 
-To create and run the container, run **Eclipse Photon Php5.6 (9.5.6)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse Photon Php5.6 (9.6.1)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/debian-eclipse-php:9.5.6-photon  
+    ~/.local/bin/debian-eclipse-php:9.6.1-photon  
 
 ____  
 
@@ -185,26 +185,26 @@ ____
 
 **ewsdocker/debian-eclipse-php:edge-oxygen**  
 
-**edge-oxygen** is the development tag for the **9.5.6** release tag.
+**edge-oxygen** is the development tag for the **9.6.1** release tag.
 
     docker pull ewsdocker/debian-eclipse-php:edge-oxygen
-    docker tag ewsdocker/debian-eclipse-php:edge-oxygen ewsdocker/debian-eclipse-php:9.5.6-oxygen
+    docker tag ewsdocker/debian-eclipse-php:edge-oxygen ewsdocker/debian-eclipse-php:9.6.1-oxygen
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-php-9.5.6-oxygen:/root \
-               --name=debian-eclipse-php-9.5.6-oxygen \
-           ewsdocker/debian-eclipse-php:9.5.6-oxygen lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-php-9.6.1-oxygen:/root \
+               --name=debian-eclipse-php-9.6.1-oxygen \
+           ewsdocker/debian-eclipse-php:9.6.1-oxygen lms-setup  
 
 optional step:
 
     docker rmi ewsdocker/debian-eclipse-php:edge-oxygen  
 
-To create and run the container, run **Eclipse Oxygen Php5.6 (9.5.6)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse Oxygen Php5.6 (9.6.1)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/debian-eclipse-php:9.5.6-oxygen  
+    ~/.local/bin/debian-eclipse-php:9.6.1-oxygen  
 
 ____  
 
@@ -232,7 +232,7 @@ Since these options are _the same for all gui containers_, they should probably 
 
 ____  
 
-**Copyright © 2018. EarthWalk Software.**  
+**Copyright © 2018, 2019. EarthWalk Software.**  
 **Licensed under the GNU General Public License, GPL-3.0-or-later.**  
 
 This file is part of **ewsdocker/debian-eclipse-php**.  

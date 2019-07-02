@@ -56,8 +56,8 @@ ARG ARG_SOURCE
 
 # =========================================================================
 
-ENV ECLIPSE_RELEASE=photon 
-ENV ECLIPSE_VERS=R 
+ENV ECLIPSE_RELEASE="2019-03" 
+ENV ECLIPSE_VERS="R" 
 ENV ECLIPSE_IDE=php 
 ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}-linux-gtk-x86_64.tar.gz" 
 ENV ECLIPSE_DIR=eclipse 
@@ -82,6 +82,10 @@ ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEA
 
 # =========================================================================
 
+COPY scripts/. /
+
+# =========================================================================
+
 RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list \
  && wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
  && apt-get -y update \
@@ -102,14 +106,17 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt
                php5.6-mysqlnd \
                php5.6-phar \ 
                php5.6-xml \
+ \
  && mkdir composer \ 
  && cd composer \
  && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/bin/composer \
+ \
  && cd /usr/local/share \
  && wget ${ECLIPSE_URL} \
  && tar -xvf ${ECLIPSE_PKG} \
  && rm ${ECLIPSE_PKG} \  
  && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/bin/eclipse \
+ \
  && apt-get clean all \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
 
